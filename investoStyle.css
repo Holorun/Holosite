@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(3, 37, 43);  
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;  
+}
+
+.holo {
+    margin: auto;
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+}
+
+.topMain{
+    margin: 18px;
+    list-style: none;
+    text-align: center;
+    
+}
+
+.nav_item {
+    display: inline; 
+    width: 235px;
+}
+
+.nav_link{
+    display: inline-flex;
+    flex-direction: column-reverse;
+    width: 235px;
+    padding: 5px;
+    margin: 0 1px;
+    margin-top: 10px;
+    color: rgba(158, 173, 170, 0.945);
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border-top: solid 2.5px rgba(165, 177, 174, 0.945);
+    align-items: center; 
+    letter-spacing: 1.5px; 
+   
+}
+
+.nav_link::before{
+    content: '';
+    display: flex;
+    flex-direction: column-reverse;
+    height: 30px;
+    width: 235px;
+    position: absolute;
+    font-size: 22px;
+    text-decoration: none;
+    align-items: center; 
+    letter-spacing: 1.5px; 
+
+}
+
+ .nav_link:hover {
+    color: rgba(245, 245, 245, 0.945);
+    border-top: solid 2.5px rgba(245, 245, 245, 0.945);
+   
+}
+
+.active{
+    color: rgba(245, 245, 245, 0.945);
+    border-top: solid 2.5px rgba(245, 245, 245, 0.945);
+}
+
+
+
+.Inv{
+    display:block ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.Inv-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.Inv-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.Inv-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+}
+
+
+

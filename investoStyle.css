@@ -1,20 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color:rgb(2, 22, 26);   
+    background-color: rgb(3, 37, 43);  
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;  
+    min-height: 100vh; 
 }
 
 .holo {
     margin: auto;
-    position: fixed;
+    top:0;
+    left: 0;
+    position: relative;
     padding: 25px;
     width: 100%;
+    z-index: 1000;
 }
 
 .topMain{
@@ -54,16 +57,16 @@ body {
     width: 235px;
     position: absolute;
     font-size: 22px;
-    text-decoration: none;
+    text-decoration:none;
     align-items: center; 
     letter-spacing: 1.5px; 
 
 }
 
- .nav_link:hover {
+.nav_link:hover {
     color: rgba(245, 245, 245, 0.945);
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
-   
+    
 }
 
 .active{
@@ -71,6 +74,77 @@ body {
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
 
+
+
+
+/* Hero Section */
+.inv {
+    display: flex;
+    align-items: center; /* text + video align at top */
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap; /* stack on smaller screens */
+ 
+}
+inv::before {
+  content: "";
+  display: block;
+  height: 90px; /* equal to navbar height */
+}
+
+
+.inv-text {
+    flex: 2;
+    margin-left: 10px;
+    text-align: left;
+    min-width: 300px;
+    color: #4fc3f7;        /* light blue link */
+}
+
+a {
+    color: aqua;
+}
+
+.inv-text h1{
+    color: rgba(230, 122, 122, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.inv-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+}
+
+
+
+/* ----------------- Mobile Styles ----------------- */
+@media (max-width: 768px) {
+  .Inv {
+    flex-direction: column;  /* stack text + video */
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* smaller padding on mobile */
+  }
+
+  .Inv-text {
+    margin: 0 auto 20px;
+  }
+
+  .Inv-video video {
+    width: 100%;   /* full width video */
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
 
 
 

@@ -12,7 +12,7 @@ body {
 
 .holo {
     margin: auto;
-    position: fixed;
+    position: relative;
     padding: 25px;
     width: 100%;
 }
@@ -72,6 +72,7 @@ body {
     color: rgba(245, 245, 245, 0.945);
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
+
 
 
 

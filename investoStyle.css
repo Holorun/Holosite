@@ -46,6 +46,9 @@ body {
    
 }
 
+  
+
+
 .nav_link::before{
     content: '';
     display: flex;
@@ -54,22 +57,23 @@ body {
     width: 235px;
     position: absolute;
     font-size: 22px;
-    text-decoration: none;
+    text-decoration:none;
     align-items: center; 
     letter-spacing: 1.5px; 
 
 }
 
- .nav_link:hover {
+.nav_link:hover {
     color: rgba(245, 245, 245, 0.945);
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
-   
+    
 }
 
 .active{
     color: rgba(245, 245, 245, 0.945);
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
+
 
 
 

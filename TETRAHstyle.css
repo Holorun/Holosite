@@ -11,10 +11,13 @@ body {
 }
 
 .holo {
+    top:0;
+    left: 0;
     margin: auto;
-    position: relative;
+    position:relative;
     padding: 25px;
     width: 100%;
+    z-index: 1000;
 }
 
 .topMain {
@@ -898,6 +901,5 @@ body {
     max-height: 300px;   /* keep video visible but not huge */
   }
 }
-
 
 

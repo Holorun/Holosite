@@ -10,12 +10,17 @@ body {
     min-height: 100vh;  
 }
 
+/* -------------- Navbar ------------*/ 
 .holo {
     margin: auto;
-    position: fixed;
+    top:0;
+    left: 0;
+    position: relative;
     padding: 25px;
     width: 100%;
+    z-index: 1000;
 }
+
 
 .topMain{
     margin: 18px;
@@ -71,14 +76,68 @@ body {
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
 
+
+/*-----------h,p----------*/
+.holorun {
+    display: flex;
+    align-items: center; /* text + video align at top */
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap; /* stack on smaller screens */
+ 
+}
+holorun::before {
+  content: "";
+  display: block;
+  height: 90px; /* equal to navbar height */
+}
+
+
+.holotext {
+    flex: 2;
+    margin-left: 10px;
+    text-align: left;
+    min-width: 300px;
+    color: #7f8588;        /* light blue link */
+}
+
+
+
+.holo-text h1, h2, h3, h4, h5 {
+    color: rgba(235, 213, 213, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.holotext p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+}
+
+/* ----------------- Mobile Styles ----------------- */
 @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: #444;
-      position: absolute;
-      top: 60px;
-      left: 0;
-    }
+  .Inv {
+    flex-direction: column;  /* stack text + video */
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* smaller padding on mobile */
+  }
+
+  .Inv-text {
+    margin: 0 auto 20px;
+  }
+
+  .Inv-video video {
+    width: 100%;   /* full width video */
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+  }
 }

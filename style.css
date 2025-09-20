@@ -27,6 +27,8 @@ body {
 .nav_item {
     display: inline; 
     width: 235px;
+     flex-wrap: wrap;
+  
 }
 
 .nav_link{
@@ -70,7 +72,6 @@ body {
     color: rgba(245, 245, 245, 0.945);
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
-
 
 
 

@@ -888,7 +888,7 @@ body {
     max-height: 250px;   /* smaller on phones */
   }
 
-  .hero-vidvideo,
+  .hero-vid video,
   .browser-vid video,
   .RK-vid video,
   .May-vid video,
@@ -898,5 +898,6 @@ body {
     max-height: 300px;   /* keep video visible but not huge */
   }
 }
+
 
 

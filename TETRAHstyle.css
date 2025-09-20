@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(2, 10, 12);  
+    background-color:rgb(2, 22, 26);   
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;  
 }
@@ -17,14 +17,14 @@ body {
     width: 100%;
 }
 
-.topMain{
+.topMain {
     margin: 18px;
     list-style: none;
     text-align: center;    
 }
 
 
-.nav_item {
+.nav_item{
     display: inline; 
     width: 235px;
 }
@@ -72,30 +72,831 @@ body {
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
 
-.Slide-Container{
-    background-color: aqua;
-    width: 599px;
-    display: block;
-   
-       
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center; /* text + video align at top */
+    justify-content: space-between;
+    padding: 40px 10%;
+    gap: 24px;
+    flex-wrap: wrap; /* stack on smaller screens */
+ 
 }
 
-.slideFadeImg, .slideFadeVideo{
-   max-width: 530px;  
-
+.hero-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
 }
 
-img, video{
-    left: 33rem;
-    bottom: 15rem;
-    width: 35rem;
-    height: 35rem;
-    position: absolute; 
+.hero-text h1 {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-left: 5px;
+
+     
 }
 
+.hero-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-left: 5px;
+    display: flex;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
 
-
-
-
-
+/* Video Section - TETRAH */
+.hero-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  
     
+}
+
+.slides {
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+}
+
+.hero-vid img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain; /* full image visible */
+  border-radius: 12px;
+}
+
+.hero-vid .slide video {
+  width: 100%;
+  height: 100%;
+  
+  object-fit: contain;   /* fills, may crop */
+  border-radius: 12px;
+}
+
+
+
+
+/* Browser Section */
+.browser{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.browser-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.browser-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.browser-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - 3D-broswer */
+
+.browser-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.slides{
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+ .slide img, 
+ .slide video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+
+/* RK Section */
+.RK{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.RK-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.RK-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.RK-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - RK */
+.RK-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.RK-slides {
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.RK-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+ .RK-slide img, 
+ .RK-slide video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+
+
+
+    /* Browser Section */
+.browser{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.browser-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.browser-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.browser-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - 3D-broswer */
+
+.browser-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.slides{
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+ .slide img, 
+ .slide video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+
+
+
+
+/* May Section */
+
+
+
+
+.May{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.May-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.May-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.May-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - May progress */
+.May-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.May-slides {
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.May-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+.May-slide img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.May-slide video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;  /* keep video filling */
+  border-radius: 12px;
+}
+
+
+
+
+/* June Section */
+
+
+
+
+.June{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.June-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.June-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.June-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - May progress */
+.June-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.June-slides {
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.June-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+.June-slide img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.June-slide video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;  /* keep video filling */
+  border-radius: 12px;
+}
+
+
+
+/* July Section */
+
+
+
+
+.July{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.July-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.July-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.July-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - July progress */
+.July-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.July-slides {
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.July-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+.July-slide img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.July-slide video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;  /* keep video filling */
+  border-radius: 12px;
+}
+
+
+
+
+/* Aug Section */
+
+
+
+
+.Aug{
+    display:flex ;
+    flex-wrap: wrap; /* stack on smaller screens */
+    align-items: flex-start; /* text + video align at top */
+    justify-content: flex-start;
+    padding: 40px 10%;
+    gap: 20px;
+    
+ 
+}
+
+.Aug-text {
+    flex: 2;
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    display: inline-block;              /* take more space */
+    min-width: 300px;
+}
+
+.Aug-text h1{
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.Aug-text p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+     
+}
+
+/* Video Section - Aug progress */
+.Aug-vid {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    
+}
+
+.Aug-slides {
+    display: flex;
+    transition: none;
+    width: 100%;
+}
+
+.Aug-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16/9;
+}
+
+.Aug-slide img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.Aug-slide video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;  /* keep video filling */
+  border-radius: 12px;
+}
+
+
+
+  /* Navigation buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      
+    }
+
+    .prev:hover,
+    .next:hover {
+  background: rgba(0,0,0,0.8);
+    }  
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+ /* Dots navigation */
+   .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+    display: inline-block;
+    width: 8px;      /* smaller */
+    height: 8px;     /* smaller */
+    margin: 0 3px;   /* closer together */
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    }
+
+    .dot.active {
+      background: #333;
+    }
+
+
+/* Lightbox Overlay */
+.lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  position: relative;
+  z-index: 10000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.8);
+}
+
+/* Close Button */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.lightbox .close:hover {
+  color: red;
+}
+
+/* Prev/Next Buttons inside Lightbox */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10000; /* make sure image is below buttons */
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+
+
+
+/* === Unified Media Styling === */
+
+/* Images: keep full image visible, don’t stretch */
+.hero-vid img,
+.browser-vid img,
+.RK-vid img,
+.May-vid img,
+.June-vid img,
+.July-vid img,
+.Aug-vid {
+  max-width: 100%;
+  max-height: 400px;   /* control height */
+  object-fit: cover; /* show whole image */
+  border-radius: 12px;
+}
+
+/* Videos: fill the frame */
+.hero-vid video,
+.browser-vid video,
+.RK-vid video,
+.May-vid video,
+.June-vid video,
+.July-vid video,
+.Aug-vid video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* immersive */
+  border-radius: 12px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-vid img,
+  .browser-vid img,
+  .RK-vid img,
+  .May-vid img,
+  .June-vid img,
+  .July-vid img,
+  .Aug-vid img {
+    max-height: 250px;   /* smaller on phones */
+  }
+
+  .hero-vidvideo,
+  .browser-vid video,
+  .RK-vid video,
+  .May-vid video,
+  .June-vid video,
+  .July-vid video,
+  .Aug-vid video {
+    max-height: 300px;   /* keep video visible but not huge */
+  }
+}
+
+

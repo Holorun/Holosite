@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(3, 37, 43);  
+    background-color:rgb(2, 22, 26);   
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;  
 }
@@ -70,6 +70,7 @@ body {
     color: rgba(245, 245, 245, 0.945);
     border-top: solid 2.5px rgba(245, 245, 245, 0.945);
 }
+
 
 
 

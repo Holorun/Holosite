@@ -246,29 +246,29 @@ body {
 
 @media screen and (max-width: 768px) {
   
-  /*Navbar scroll */
-  /* Default navbar */
-.holo {
-  position: sticky;  /* stays on top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 25px;     /* normal padding */
-  background-color: rgb(3, 37, 43);
-  z-index: 1000;
-  transition: all 0.3s ease;  /* smooth shrinking */
- }
- 
-.topMain {
-    list-style: none;
+  /* Navbar: sticky + responsive */
+  .holo {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(3, 37, 43);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .topMain {
     display: flex;
-    justify-content: space-between; /* spread links evenly */
+    justify-content: space-between;
     padding: 0;
     margin: 0;
- }
+    width: 100%;
+  }
 
- .nav_link {
+  .nav_link {
     display: block;
+    flex: 1 1 auto;
     text-align: center;
     padding: 8px 0;
     font-size: 16px;
@@ -279,30 +279,26 @@ body {
   .nav_link.active {
     color: #fff;
     border-top: 2.5px solid #fff;
-
   }
 
   /* Section stacking: video first, text below */
   .hero, .browser, .rk, .may,
   .june, .july, .aug {
-    flex-direction: column;   /* stack items vertically */
-    align-items: center;      /* center content */
+    flex-direction: column;
+    align-items: center;
     padding: 20px 5%;
   }
-   
-   /* text spans full width */
+
+  /* Text spans full width below video */
   .text {
-                     /* text comes after video */
     width: 100%;
-    max-width: 500px;         /* optional max width */
+    max-width: 500px;
     margin: 15px 0 0 0;
     text-align: left;
   }
 
-  /* Reduce heading size for mobile */
   .text h1 {
     font-size: 1.5rem;
-    
   }
 
   .text p {
@@ -310,60 +306,68 @@ body {
     max-width: 100%;
   }
 
-    /* Video width to full screen */
+  /* ===== Video containers & slides ===== */
   .hero-vid, .browser-vid, .rk-vid, .may-vid,
   .june-vid, .july-vid, .aug-vid {
-  
     width: 100%;
-    max-width: 500px;         /* optional max-width */
+    max-width: 100%;
     margin: 0 auto;
   }
 
- /* Make the dots work on mobile */
+  .slides {
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .slide img,
+  .slide video {
+    width: 100%;
+    height: 100%;        /* keep video/image ratio */
+    max-height: none;    /* remove desktop cap */
+    object-fit: contain; /* no cropping */
+  }
+
+  /* Slider dots */
   .dots {
     position: relative;
-    box-sizing: content-box;
-    bottom: auto;
-    margin: 0 4px;
-    margin-top: 12px;
-    text-align: center;
     display: flex;
     justify-content: center;
-    gap: 2px;
+    gap: 4px;
+    margin: 12px 0 0 0;
     width: 100%;
-  
   }
 
   .dot {
-    width: 5px;               /* smaller size */
-    height: 5px;
-    margin: 0 4px;             /* space between dots */
-    background: rgba(200, 200, 200, 0.7);  /* lighter color for mobile */
-    border-radius: 50%;        /* keep circular */
-    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: rgba(200,200,200,0.7);
+    border-radius: 50%;
     transition: background 0.3s, transform 0.2s;
   }
 
-    .dot.active {
-    background: rgba(245, 245, 245, 0.95); /* highlight active */
-    transform: scale(1.3);   /* slightly bigger for focus */
+  .dot.active {
+    background: rgba(245,245,245,0.95);
+    transform: scale(1.3);
   }
-  
-  /* Mobile slider arrows */
+
+  /* Slider arrows */
   .prev, .next {
-    border-radius: 0;           /* remove circle */
-    background: transparent;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    background: transparent;
     font-size: 15px;
-    padding: 4px 5px;           /* just a bit of touch area */
-
+    padding: 4px 5px;
+    border-radius: 0;
+    transition: opacity 0.3s ease;
   }
 
-   .prev.show, .next.show {
-    opacity: 1;          /* fade-in when active */
+  .prev.show, .next.show {
+    opacity: 1;
   }
-  /* Optional: reposition arrows closer to slide edges */
+
   .prev { left: 5px; }
   .next { right: 5px; }
 

@@ -4,13 +4,13 @@
 const navLinks = document.querySelectorAll('.nav_link');
 navLinks.forEach(navLink => {
   navLink.addEventListener('click', () => {
-    document.querySelector('.active').classList.remove('active');
+    document.querySelector('.active')?.classList.remove('active');
     navLink.classList.add('active');
   });
 });
 
 // ==========================
-// Initialize All Sliders
+// Initialize Sliders (only if slides exist)
 // ==========================
 document.querySelectorAll(
   ".hero-vid, .browser-vid, .rk-vid, .may-vid, .june-vid, .july-vid, .aug-vid"
@@ -18,31 +18,28 @@ document.querySelectorAll(
 
 function initSlider(container) {
   const slides = container.querySelector(".slides");
-  if (!slides) return;
+  if (!slides) return; // skip if no slides
 
   const slideItems = slides.querySelectorAll(".slide");
-  if (!slideItems.length) return;
+  if (!slideItems.length) return; // skip if empty
 
   const prevBtn = container.querySelector(".prev");
   const nextBtn = container.querySelector(".next");
   const dotsContainer = container.querySelector(".dots");
 
-  // ✅ Hide arrows + dots if only one slide
+  // Hide arrows/dots if 1 or less slides
   if (slideItems.length <= 1) {
     if (prevBtn) prevBtn.style.display = "none";
     if (nextBtn) nextBtn.style.display = "none";
     if (dotsContainer) dotsContainer.style.display = "none";
-    return; // stop init, nothing to slide
+    return;
   }
 
   if (!prevBtn || !nextBtn || !dotsContainer) return;
 
   let index = 0;
-  let autoplayInterval;
 
-  // ==========================
   // Create dots dynamically
-  // ==========================
   dotsContainer.innerHTML = "";
   slideItems.forEach((_, i) => {
     const dot = document.createElement("span");
@@ -53,34 +50,11 @@ function initSlider(container) {
   });
   const dots = dotsContainer.querySelectorAll(".dot");
 
-  // ==========================
-  // Update slider display
-  // ==========================
   function updateSlider() {
-    // Pause + reset all videos
-    slideItems.forEach(slide => {
-      const video = slide.querySelector("video");
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-
-    const currentSlide = slideItems[index];
-    const video = currentSlide.querySelector("video");
-
     slides.style.transform = `translateX(${-index * 100}%)`;
     dots.forEach(dot => dot.classList.remove("active"));
     dots[index].classList.add("active");
-
-    // Autoplay for videos/images
-    clearInterval(autoplayInterval);
-    if (video) {
-      video.play();
-      video.addEventListener("ended", () => startAutoplay(), { once: true });
-    } else {
-      startAutoplay();
-    }
+    // ✅ No autoplay, no reset — videos just sit there
   }
 
   function goToSlide(i) {
@@ -98,21 +72,7 @@ function initSlider(container) {
     updateSlider();
   });
 
-  function startAutoplay() {
-    clearInterval(autoplayInterval);
-    const currentSlide = slideItems[index];
-    const video = currentSlide.querySelector("video");
-    if (!video) {
-      autoplayInterval = setInterval(() => {
-        index = (index + 1) % slideItems.length;
-        updateSlider();
-      }, 5000);
-    }
-  }
-
-  // ==========================
-  // Mobile Swipe & Arrows/Dots
-  // ==========================
+  // Mobile swipe support
   function setupMobileSlider() {
     if (window.innerWidth > 768) {
       prevBtn.style.opacity = '';
@@ -121,117 +81,98 @@ function initSlider(container) {
       return;
     }
 
-    // Arrows hidden by default
     prevBtn.style.opacity = 0;
     nextBtn.style.opacity = 0;
 
-    // Show arrows temporarily on touch
     let touchTimeout;
     slides.addEventListener("touchstart", () => {
       prevBtn.style.opacity = 1;
       nextBtn.style.opacity = 1;
-
       clearTimeout(touchTimeout);
       touchTimeout = setTimeout(() => {
         prevBtn.style.opacity = 0;
         nextBtn.style.opacity = 0;
-      }, 2000); // hide after 2s
+      }, 2000);
     });
 
-    // Swipe handling
     let touchStartX = 0;
     let touchEndX = 0;
 
-    slides.addEventListener("touchstart", e => {
-      touchStartX = e.changedTouches[0].screenX;
+    slides.addEventListener("touchstart", e => { 
+      touchStartX = e.changedTouches[0].screenX; 
     });
-
     slides.addEventListener("touchend", e => {
       touchEndX = e.changedTouches[0].screenX;
       const swipeDistance = touchEndX - touchStartX;
-      const minSwipe = 50;
-
-      if (swipeDistance > minSwipe) {
+      if (swipeDistance > 50) {
         index = (index - 1 + slideItems.length) % slideItems.length;
         updateSlider();
-      } else if (swipeDistance < -minSwipe) {
+      } else if (swipeDistance < -50) {
         index = (index + 1) % slideItems.length;
         updateSlider();
       }
     });
 
-    // Dots visibility
-    if (slideItems.length <= 1) {
-      dotsContainer.style.display = "none";
-    } else {
-      dotsContainer.style.display = "flex";
-    }
+    dotsContainer.style.display = slideItems.length <= 1 ? "none" : "flex";
   }
 
-  // Run mobile setup on init + resize
   setupMobileSlider();
   window.addEventListener('resize', setupMobileSlider);
 
-  // ==========================
-  // Init slider
-  // ==========================
   updateSlider();
-
-  // ==========================
-  // Lightbox for this slider
-  // ==========================
-  const sliderImages = Array.from(container.querySelectorAll("img"));
-  sliderImages.forEach((img, i) => {
-    img.addEventListener("dblclick", () => openLightbox(sliderImages, i));
-  });
 }
 
 // ==========================
-// Global Lightbox
+// Global Lightbox (for images only)
 // ==========================
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = lightbox.querySelector(".lightbox-img");
-const closeBtn = lightbox.querySelector(".close");
-const lightboxPrev = lightbox.querySelector(".lightbox-prev");
-const lightboxNext = lightbox.querySelector(".lightbox-next");
+if (lightbox) {
+  const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const closeBtn = lightbox.querySelector(".close");
+  const lightboxPrev = lightbox.querySelector(".lightbox-prev");
+  const lightboxNext = lightbox.querySelector(".lightbox-next");
 
-let currentLightboxImages = [];
-let currentLightboxIndex = 0;
+  let currentLightboxImages = [];
+  let currentLightboxIndex = 0;
 
-function openLightbox(images, startIndex) {
-  currentLightboxImages = images;
-  currentLightboxIndex = startIndex;
-  lightbox.style.display = "flex";
-  updateLightboxImage();
+  function openLightbox(images, startIndex) {
+    currentLightboxImages = images;
+    currentLightboxIndex = startIndex;
+    lightbox.style.display = "flex";
+    updateLightboxImage();
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+  }
+
+  function updateLightboxImage() {
+    lightboxImg.src = currentLightboxImages[currentLightboxIndex].src;
+  }
+
+  function showPrevImage() {
+    currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+    updateLightboxImage();
+  }
+
+  function showNextImage() {
+    currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+    updateLightboxImage();
+  }
+
+  // Lightbox events
+  closeBtn.addEventListener("click", closeLightbox);
+  lightboxPrev.addEventListener("click", showPrevImage);
+  lightboxNext.addEventListener("click", showNextImage);
+  lightbox.addEventListener("click", e => { 
+    if (e.target === lightbox) closeLightbox(); 
+  });
+
+  // Bind double-click for images only
+  document.querySelectorAll(".slides img").forEach((img, i, arr) => {
+    img.addEventListener("dblclick", () => openLightbox(arr, i));
+  });
 }
-
-function closeLightbox() {
-  lightbox.style.display = "none";
-}
-
-function updateLightboxImage() {
-  lightboxImg.src = currentLightboxImages[currentLightboxIndex].src;
-}
-
-function showPrevImage() {
-  currentLightboxIndex =
-    (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
-  updateLightboxImage();
-}
-
-function showNextImage() {
-  currentLightboxIndex =
-    (currentLightboxIndex + 1) % currentLightboxImages.length;
-  updateLightboxImage();
-}
-
-// Lightbox events
-closeBtn.addEventListener("click", closeLightbox);
-lightboxPrev.addEventListener("click", showPrevImage);
-lightboxNext.addEventListener("click", showNextImage);
-lightbox.addEventListener("click", e => {
-  if (e.target === lightbox) closeLightbox();
-});
 
 // ==========================
 // Show more / Show less
@@ -240,10 +181,7 @@ document.querySelectorAll(".toggle-desc").forEach(btn => {
   btn.addEventListener("click", () => {
     const desc = btn.previousElementSibling;
     desc.classList.toggle("expanded");
-
-    btn.textContent = desc.classList.contains("expanded")
-      ? "Show less"
-      : "Show more";
+    btn.textContent = desc.classList.contains("expanded") ? "Show less" : "Show more";
   });
 });
 

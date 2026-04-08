@@ -1,172 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TETRAH Project</title>
-  <link rel="stylesheet" href="TETRAHstyle.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TETRAH Project – Holorun</title>
+  <link rel="stylesheet" href="assets/css/TETRAHstyle.css"/>
 </head>
 
 <body>
+
   <!-- Navbar -->
-  <nav class="holo">
-    <ul class="topMain">
-      <li class="nav_item"><a class="nav_link" href="/holo.html">Holo something</a></li>
-      <li class="nav_item"><a class="nav_link active" href="/index.html">TETRAH Project</a></li>
-      <li class="nav_item"><a class="nav_link" href="/investor.html">Investors</a></li>
+  <nav class="navbar">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a class="nav-link" href="holo.html">Holo something</a></li>
+      <li><a class="nav-link active" href="index.html">TETRAH Project</a></li>
+      <li><a class="nav-link" href="investor.html">Investors</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="text">
+  <!-- TETRAH Hero -->
+  <section class="section-block">
+    <div class="section-text">
       <h1>Hello World!</h1>
-      <p>
-        Meet TETRAH (Technology, Three Dimension, Artificial Intelligence,
-        Hologram) — our first on-going hardware product development & demo.
-      </p>
+      <p>Meet TETRAH (Technology, Three Dimension, Artificial Intelligence, Hologram) — our first ongoing hardware product development &amp; demo.</p>
     </div>
-
-    <div class="hero-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/tetrah.JPG" src="./slide-video/TETRAH_weather_display.mp4"></video></div>
-        <div class="slide"><img src="./slide-imgs/Front.png" alt="Front view" /></div>
-        <div class="slide"><img src="./slide-imgs/Side.png" alt="Side view" /></div>
-        <div class="slide"><img src="./slide-imgs/Back.png" alt="Back view" /></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/TETRAH/TETRAH_weather_display.mp4"></video></div>
+        <div class="slide"><img src="./slide-imgs/tetrah/Front.png" alt="TETRAH Front"></div>
+        <div class="slide"><img src="./slide-imgs/tetrah/Side.png" alt="TETRAH Side"></div>
+        <div class="slide"><img src="./slide-imgs/tetrah/Back.png" alt="TETRAH Back"></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
 
-  <!-- Browser Section -->
-  <section class="browser">
-    <div class="text">
-      <h1>Holorn 3D-Browser 2017-2019</h1>
-      <p>Holorun actually started as a software development company, building applications for end users to bridge their needs digitally.
-        today we announce our first hardware & sofware development to the world!.
-</p>
+  <!-- 3D Browser -->
+  <section class="section-block">
+    <div class="section-text">
+      <h1>Holorun 3D-Browser 2018–2019</h1>
+      <p>Holorun actually started as a software company!</p>
     </div>
-
-    <div class="browser-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/3db.JPG" src="./slide-video/Holorun-browser-3D.mp4"></video></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/atom.JPG" src="./slide-video/Holorun.MP4"></video></div>
-        <div class="slide"><img src="./slide-imgs/00_3D_Browser_1_00.jpg" alt="3D browser view" /></div>
-        <div class="slide"><img src="./slide-imgs/08_H_UI_all_15.jpg" alt="UI design" /></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/3D-Browser/Holorun-browser-3D.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/3D-Browser/Holorun.MP4"></video></div>
+        <div class="slide"><img src="./slide-imgs/H-3DBrowser/00_3D_Browser_1_00.jpg" alt="3D Browser"></div>
+        <div class="slide"><img src="./slide-imgs/H-3DBrowser/08_H_UI_all_15.jpg" alt="3D Browser UI"></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
 
-  <!-- RK Section -->
-  <section class="rk">
-    <div class="text">
-      <h1>RK - Reality Kit 2019-2022</h1>
-      <p>Our first initial prototype…</p>
+  <!-- RK -->
+  <section class="section-block">
+    <div class="section-text">
+      <h1>RK – Reality Kit 2019–2022</h1>
+      <p>Our first initial prototype — where the hardware journey began.</p>
     </div>
-
-    <div class="rk-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/dotcom.JPG" src="./slide-video/Holorun-Demodevice.MP4"></video></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/rk.JPG" src="./slide-video/IMG_1808.mp4"></video></div>
-        <div class="slide"><img src="./slide-imgs/IMG_1852.jpg" alt="Prototype photo" /></div>
-        <div class="slide"><img src="./slide-imgs/RKinGreen.jpg" alt="RK in green light" /></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/RK/Holorun-Demodevice.MP4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/RK/IMG_1808.mp4"></video></div>
+        <div class="slide"><img src="./slide-imgs/RK/IMG_1852.jpg" alt="RK prototype"></div>
+        <div class="slide"><img src="./slide-imgs/RK/RKinGreen.jpg" alt="RK in green"></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
 
-  <!-- May Section -->
-  <section class="may">
-    <div class="text">
-      <h1>May 2025 - Moving to UCI Cove</h1>
-      <p>That’s where we started TETRAH and continued!</p>
+  <!-- May 2025 -->
+  <section class="section-block">
+    <div class="section-text">
+      <h1>May 2025 – Moving to UCI Cove</h1>
+      <p>That's where we started TETRAH and continue to build!</p>
     </div>
-
-    <div class="may-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/space.JPG" src="./slide-video/May-init.mp4"></video></div>
-        <div class="slide"><img src="./slide-imgs/20250519213043842_0.bmp" alt="May 2025 photo 1" /></div>
-        <div class="slide"><img src="./slide-imgs/20250526222611679_0.bmp" alt="May 2025 photo 2" /></div>
-        <div class="slide"><img src="./slide-imgs/Dim-display.PNG" alt="Dim display" /></div>
-        <div class="slide"><img src="./slide-imgs/IMG_1075.jpg" alt="Prototype photo" /></div>
-        <div class="slide"><img src="./slide-imgs/IMG_1160.jpg" alt="Prototype photo 2" /></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/May/May-init.mp4"></video></div>
+        <div class="slide"><img src="./slide-imgs/May/20250519213043842_0.bmp" alt="May lab"></div>
+        <div class="slide"><img src="./slide-imgs/May/20250526222611679_0.bmp" alt="May lab 2"></div>
+        <div class="slide"><img src="./slide-imgs/May/Dim-display.PNG" alt="Dim display"></div>
+        <div class="slide"><img src="./slide-imgs/May/IMG_1075.jpg" alt="May setup"></div>
+        <div class="slide"><img src="./slide-imgs/May/IMG_1160.jpg" alt="May setup 2"></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
 
-  <!-- June Section -->
-  <section class="june">
-    <div class="text">
-      <h1>June 2025 - Try it all</h1>
-      <p>Experimenting with MLA, Sheets, Rayleigh lens…</p>
+  <!-- June 2025 -->
+  <section class="section-block">
+    <div class="section-text">
+      <h1>June 2025 – Try It All</h1>
+      <p>We introduced different patterns for Spherical Aberration (SB) — trying MLA, Sheets, Relay Lens, and more.</p>
     </div>
-
-    <div class="june-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/kara.JPG" src="./slide-video/karate.mp4"></video></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/iris.JPG" src="./slide-video/iris-June.mp4"></video></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/juneSA.JPG" src="./slide-video/June-SA.mp4"></video></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/mash.JPG" src="./slide-video/sheet-june.mp4"></video></div>
-        <div class="slide"><img src="./slide-imgs/20250617224238289_0.bmp" alt="June test photo 1" /></div>
-        <div class="slide"><img src="./slide-imgs/20250622224628352_0.bmp" alt="June test photo 2" /></div>
-        <div class="slide"><img src="./slide-imgs/20250627004109840_0.bmp" alt="June test photo 3" /></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/June-Tryitall/karate.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/June-Tryitall/iris-June.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/June-Tryitall/June-SA.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/June-Tryitall/sheet-june.mp4"></video></div>
+        <div class="slide"><img src="./slide-imgs/June-tryitall/20250617224238289_0.bmp" alt="June experiment"></div>
+        <div class="slide"><img src="./slide-imgs/June-tryitall/20250622224628352_0.bmp" alt="June experiment 2"></div>
+        <div class="slide"><img src="./slide-imgs/June-tryitall/20250627004109840_0.bmp" alt="June experiment 3"></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
 
-  <!-- July Section -->
-  <section class="july">
-    <div class="text">
-      <h1>July 2025 - MLA & More</h1>
-      <p>Continuing MLA, sheets, Rayleigh lens tests…</p>
+  <!-- July 2025 -->
+  <section class="section-block">
+    <div class="section-text">
+      <h1>July 2025 – MLA &amp; More</h1>
+      <p>Exploring Micro-Lens Arrays and advanced optical configurations for improved 3D projection.</p>
     </div>
-
-    <div class="july-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/0708.JPG" src="./slide-video/20250708-002232.mp4"></video></div>
-        <div class="slide"><img src="./slide-imgs/20250708000821379_0.bmp" alt="July experiment photo" /></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/mla.JPG" src="./slide-video/MLA-JULY.mp4"></video></div>
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/micro.JPG" src="./slide-video/MLA-micro-July.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/July-MLA/20250708-002232.mp4"></video></div>
+        <div class="slide"><img src="./slide-imgs/July-MLA/20250708000821379_0.bmp" alt="July MLA"></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/July-MLA/MLA-JULY.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/July-MLA/MLA-micro-July.mp4"></video></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
 
-  <!-- August Section -->
-  <section class="aug">
-    <div class="text">
-      <h1>August 2025 - More Power (latest)</h1>
-      <p>Testing higher power configurations…</p>
+  <!-- August 2025 -->
+  <section class="section-block">
+    <div class="section-text">
+      <h1>August 2025 – More Power</h1>
+      <p>Pushing the limits — our most advanced build yet.</p>
     </div>
-
-    <div class="aug-vid">
+    <div class="slider-vid">
       <div class="slides">
-        <div class="slide"><video playsinline muted controls poster="./thumbnail/lastbutnotleast.JPG" src="./slide-video/20250819-221525 - morepower.mp4"></video></div>
+        <div class="slide"><video playsinline muted preload="metadata" controls src="./slide-video/Aug-adv/20250819-221525 - morepower.mp4"></video></div>
       </div>
-
-      <button class="prev">❮</button>
-      <button class="next">❯</button>
+      <button class="prev" aria-label="Previous">&#10094;</button>
+      <button class="next" aria-label="Next">&#10095;</button>
       <div class="dots"></div>
     </div>
   </section>
@@ -174,11 +157,11 @@
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
-    <button class="lightbox-prev">❮</button>
-    <img class="lightbox-img" src="" alt="Fullscreen" />
-    <button class="lightbox-next">❯</button>
+    <button class="lightbox-prev">&#10094;</button>
+    <img class="lightbox-img" src="" alt="Fullscreen">
+    <button class="lightbox-next">&#10095;</button>
   </div>
 
-  <script src="funcApp.js"></script>
+  <script src="assets/js/funcApp.js"></script>
 </body>
 </html>

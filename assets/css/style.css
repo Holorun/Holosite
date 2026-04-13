@@ -12,7 +12,7 @@ body {
 
 .holo {
     margin: auto;
-    position: fixed;
+    position: relative;
     padding: 25px;
     width: 100%;
 }

@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(2, 17, 22, 0.938);  
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;  
+}
+
+/* -------------- Navbar ------------*/ 
+.holo {
+    margin: auto;
+    top:0;
+    left: 0;
+    position: relative;
+    padding: 25px;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.topMain{
+    margin: 18px;
+    list-style: none;
+    text-align: center;
+    
+}
+
+.nav_item {
+    display: inline; 
+    width: 235px;
+}
+
+.nav_link{
+    display: inline-flex;
+    flex-direction: column-reverse;
+    width: 235px;
+    padding: 5px;
+    margin: 0 1px;
+    margin-top: 10px;
+    color: rgba(158, 173, 170, 0.945);
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border-top: solid 2.5px rgba(165, 177, 174, 0.945);
+    align-items: center; 
+    letter-spacing: 1.5px; 
+   
+}
+
+.nav_link::before{
+    content: '';
+    display: flex;
+    flex-direction: column-reverse;
+    height: 30px;
+    width: 235px;
+    position: absolute;
+    font-size: 22px;
+    text-decoration: none;
+    align-items: center; 
+    letter-spacing: 1.5px; 
+
+}
+
+ .nav_link:hover {
+    color: rgba(245, 245, 245, 0.945);
+    border-top: solid 2.5px rgba(245, 245, 245, 0.945);
+   
+}
+
+.active{
+    color: rgba(245, 245, 245, 0.945);
+    border-top: solid 2.5px rgba(245, 245, 245, 0.945);
+}
+
+
+/*-----------h,p----------*/
+.holorun {
+    display: flex;
+    align-items: center; /* text + video align at top */
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap; /* stack on smaller screens */
+ 
+}
+holorun::before {
+  content: "";
+  display: block;
+  height: 90px; /* equal to navbar height */
+}
+
+
+.holotext {
+    flex: 2;
+    margin-left: 10px;
+    text-align: left;
+    min-width: 300px;
+    color: #7f8588;        /* light blue link */
+}
+
+
+
+.holo-text h1, h2, h3, h4, h5 {
+    color: rgba(235, 213, 213, 0.945);
+    font-size: 2rem;
+    margin-left: 5px;
+    margin-bottom: 25px;
+ 
+}
+
+.holotext p {
+    color: rgba(245, 245, 245, 0.945);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    margin-left: 10px;
+    max-width: 400px; 
+    flex-wrap: wrap;
+}
+
+/* ----------------- Mobile Styles ----------------- */
+@media (max-width: 768px) {
+  .Inv {
+    flex-direction: column;  /* stack text + video */
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* smaller padding on mobile */
+  }
+
+  .Inv-text {
+    margin: 0 auto 20px;
+  }
+
+  .Inv-video video {
+    width: 100%;   /* full width video */
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}

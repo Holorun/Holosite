@@ -79,26 +79,15 @@ body {
 
 /*-----------h,p----------*/
 .holorun {
-    display: flex;
-    align-items: center; /* text + video align at top */
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap; /* stack on smaller screens */
- 
+    display: block;
+    padding: 0 40px 40px;
+    width: 100%;
 }
-holorun::before {
-  content: "";
-  display: block;
-  height: 90px; /* equal to navbar height */
-}
-
 
 .holotext {
-    flex: 2;
-    margin-left: 10px;
+    width: 100%;
     text-align: left;
-    min-width: 300px;
-    color: #7f8588;        /* light blue link */
+    color: #7f8588;
 }
 
 
